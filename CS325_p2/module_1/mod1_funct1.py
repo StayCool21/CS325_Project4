@@ -37,3 +37,12 @@ def get_raw_from_file(url):
         line = story.text
         stories.append({'line': line})
     return stories
+
+# Test Case #7: Check if all input URLs are from CBS Sports
+# we will be calling this in run.py to ensure modularity
+def ensure_cbsnews_domain(urls):
+    cbsnews_domain = "https://www.cbsnews.com" # I believe we need HTTPS for Beautiful Soup to work
+    for url in urls:
+        if cbsnews_domain not in url:
+            raise ValueError(f"URL {url} is not from CBS News")
+        

@@ -17,7 +17,7 @@
 # looking for the UML? either check the README or go to assets folder under CS325_p2
 
 import os
-from module_1.mod1_funct1 import get_url_from_file, get_raw_from_file
+from module_1.mod1_funct1 import get_url_from_file, get_raw_from_file, ensure_cbsnews_domain
 from module_2.mod2_funct1 import write_stories_to_file, get_news_from_url
 from module_3.mod3_funct1 import get_summary, write_summary_to_file
 
@@ -25,6 +25,7 @@ def main():
     url_filename = 'CS325_p2/url.txt'
     try:
         urls = get_url_from_file(url_filename)
+        ensure_cbsnews_domain(urls) # Test Case #7
     except Exception as e:
         print(f"An error occurred while getting the URLs from the file: {e}")
         return
