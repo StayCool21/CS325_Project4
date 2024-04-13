@@ -19,7 +19,15 @@ def get_url_from_file(file):
         urls = [line.strip() for line in f.readlines()]
     if not urls:
         raise ValueError("URLs not found in file")
-    return urls
+    # Test Case #8 : check if we have a duplicate URL
+    # ... and if so, remove it
+    unique_urls = list(set(urls))
+
+    if len(unique_urls) != len(urls):
+        duplicate_urls = [url for url in urls if urls.count(url) > 1]
+        print(f"Duplicate URLs found: {duplicate_urls}")
+
+    return unique_urls
 
 def get_raw_from_file(url):
     response = requests.get(url)
