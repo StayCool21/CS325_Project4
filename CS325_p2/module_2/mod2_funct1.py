@@ -26,6 +26,7 @@ def get_news_from_url(url):
     return stories
 
 def write_stories_to_file(stories, filename):
+    # Test Case #3: If an error occurs while writing to output file, throws exception
     try:
         with open(filename, 'w', encoding="utf-8") as f:
             f.write('\n'.join([story['line'] for story in stories]))

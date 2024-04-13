@@ -17,9 +17,10 @@ from bs4 import BeautifulSoup
 def get_url_from_file(file):
     with open(file, 'r', encoding="utf-8") as f:
         urls = [line.strip() for line in f.readlines()]
+    # Test Case #1: If it finds that there are no URLs, returns error saying so
     if not urls:
-        raise ValueError("URLs not found in file")
-    # Test Case #8 : check if we have a duplicate URL
+        raise ValueError("URLs not found in file- please check url.txt")
+    # Test Case #8: check if we have a duplicate URL
     # ... and if so, remove it
     unique_urls = list(set(urls))
 
@@ -36,7 +37,11 @@ def get_raw_from_file(url):
     for story in soup:
         line = story.text
         stories.append({'line': line})
-    return stories
+    # Test Case #5: Checking if file array has been written to correctly
+    if(len(stories)==0):
+        raise ValueError('No text was created- empty file')
+    else:
+        return stories
 
 # Test Case #7: Check if all input URLs are from CBS Sports
 # we will be calling this in run.py to ensure modularity

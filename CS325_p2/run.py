@@ -44,6 +44,8 @@ def main():
         write_stories_to_file(stories,rawFile2)
 
     directory = 'CS325_p2/Data/processed'
+    # Test Case 6: If the above directory does not exist, it will make it
+    if(not os.path.exists(directory)): os.makedirs(directory)
     files = os.listdir(directory)
 
     for file in files[:1]:
