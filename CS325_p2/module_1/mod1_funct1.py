@@ -46,3 +46,21 @@ def ensure_cbsnews_domain(urls):
         if cbsnews_domain not in url:
             raise ValueError(f"URL {url} is not from CBS News")
         
+# Test Case #2: Check that all URLs are accessbile using GET requests
+# returns a list of failed URLs
+def test_urls(urls):
+    # create array to store failed URLs
+    failed_urls = []
+    for url in urls:
+        try:
+            response = requests.get(url)
+            if response.status_code != 200: # 200 is the HTTP status code for "OK"
+                failed_urls.append(url)
+        except Exception as e:
+            print(f"Error in accessing URL {url}: {e}")
+
+    if failed_urls:
+        print("The following URLs failed to load:")
+        for url in failed_urls:
+            print(url)
+    
