@@ -52,5 +52,9 @@ def main():
         rawFile3 = f'CS325_p2/Data/summarized/sum{files.index(file) + 1}.txt'
         write_summary_to_file(summary, rawFile3)
 
+        # Test Case #4: Check that the summary is not empty (something was written to the file)
+        if not os.path.getsize(rawFile3) and os.path.getsize(rawFile3) < 1:
+            print(f"Summary for {file} is empty")
+
 if __name__ == "__main__":
     main()
