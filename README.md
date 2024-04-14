@@ -16,6 +16,13 @@
   <br>
 </div>
 
+## Table of Contents
+- [About The Project](#about-the-project)
+- [Getting Started](#getting-started)
+- [Utilizing OpenAI's GPT-3.5-Turbo API for Generating Summaries](#utilizing-openais-gpt-35-turbo-api-for-generating-summaries)
+- [UML Diagram](#uml-diagram)
+- [Project 4: Creating Test Cases](#project-4-creating-test-cases)
+
 ## About The Project
 ### The file "main.py" has the code to read in links to ten CBS new articles and convert them to raw text- no ads, images, or links to other articles. It utilizes beautifulsoup, a python package, and requests, a python library, to simplify the scraping process. Main calls a few different functions- one to read in links, to scrape the text, then to write to a new file. Each of these (along with main) include exception handling such as link not working or being unretrievable. 
 
@@ -69,3 +76,6 @@ To get the web scraper up and running, these steps are operating on the assumpti
   </a>
 
 <p align="center">(<a href="#readme-top">back to top</a>)</p>
+
+## Project 4: Creating Test Cases
+In Project 4, we created 8 test cases to make the code more robust. You can find some more specifics in the `issues
