@@ -20,8 +20,8 @@
 - [About The Project](#about-the-project)
 - [Getting Started](#getting-started)
 - [Utilizing OpenAI's GPT-3.5-Turbo API for Generating Summaries](#utilizing-openais-gpt-35-turbo-api-for-generating-summaries)
-- [UML Diagram](#uml-diagram)
 - [Project 4: Creating Test Cases](#project-4-creating-test-cases)
+- [UML Diagram](#uml-diagram)
 
 ## About The Project
 ### The file "main.py" has the code to read in links to ten CBS new articles and convert them to raw text- no ads, images, or links to other articles. It utilizes beautifulsoup, a python package, and requests, a python library, to simplify the scraping process. Main calls a few different functions- one to read in links, to scrape the text, then to write to a new file. Each of these (along with main) include exception handling such as link not working or being unretrievable. 
@@ -70,12 +70,19 @@ To get the web scraper up and running, these steps are operating on the assumpti
 
 * In the case of this article scraper, we return the summary provided and use it as an input along with a filename to write the summaries to a .txt file.
 
+## Project 4: Creating Test Cases
+In Project 4, we created 8 test cases to make the code more robust and prevent any issues as a result of user error. You can find more details in `issues` -> `Test Case Implementation` where eight test cases have been added and tested to ensure little to no unexpected results.
+To generalize, these improvements cover:
+* checking for valid input articles (CBS only, nonempty, no duplicates, etc.)
+* ensuring that valid articles are reachable
+* checking and consequently adding required directories if they do not already exist
+* checking to make sure output file has text, or throws proper error
+
+Adding test cases is important because it allows developers to ensure their code works correctly in different scenarios- leaving little to no room for unexpected results.
+
 ## UML Diagram
 <div align="center">
     <img src="assets/uml.jpg" alt="UML Diagram">
   </a>
 
 <p align="center">(<a href="#readme-top">back to top</a>)</p>
-
-## Project 4: Creating Test Cases
-In Project 4, we created 8 test cases to make the code more robust. You can find some more specifics in the `issues
